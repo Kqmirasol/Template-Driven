@@ -3,30 +3,30 @@
 <div class="main-container">
   
   <div class="container">
-    <h1>TEMPLATE DRIVEN FORM</h1>
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input class="input-box" type="text" id="username" name="username" [(ngModel)]="username" placeholder="Enter your username" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input class="input-box" type="email" id="email" name="email" [(ngModel)]="email" placeholder="Enter your email" required />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input class="input-box" [type]="showPassword ? 'text' : 'password'" id="password" name="password" [(ngModel)]="password" placeholder="Enter your password" required />
-      </div>
-      <div class="form-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input class="input-box" [type]="showPassword ? 'text' : 'password'" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm your password" required />
-      </div>
-      <button type="button" (click)="showPassword = !showPassword">{{ showPassword ? 'Hide' : 'Show' }} Password</button>
-      <div class="form-group">
-        <label for="phone">Phone</label>
-        <input class="input-box" type="tel" id="phone" name="phone" [(ngModel)]="phone" placeholder="Enter your phone number" required />
-      </div>
-      <div *ngIf="password !== confirmPassword && confirmPassword" class="error-message">
+  <h1>Template Driven Form</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+    <label for="username">Username</label>
+    <input class="input-box" type="text" id="username" name="username" [(ngModel)]="username" placeholder="Enter your username" required />
+    </div>
+    <div class="form-group">
+    <label for="email">Email</label>
+    <input class="input-box" type="email" id="email" name="email" [(ngModel)]="email" placeholder="Enter your email" required />
+    </div>
+    <div class="form-group">
+    <label for="password">Password</label>
+    <input class="input-box" [type]="showPassword ? 'text' : 'password'" id="password" name="password" [(ngModel)]="password" placeholder="Enter your password" required />
+    </div>
+    <div class="form-group">
+    <label for="confirmPassword">Confirm Password</label>
+    <input class="input-box" [type]="showPassword ? 'text' : 'password'" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm your password" required />
+    </div>
+    <button type="button" (click)="showPassword = !showPassword">{{ showPassword ? 'Hide' : 'Show' }} Password</button>
+    <div class="form-group">
+    <label for="phone">Phone</label>
+    <input class="input-box" type="tel" id="phone" name="phone" [(ngModel)]="phone" placeholder="Enter your phone number" required />
+    </div>
+    <div *ngIf="password !== confirmPassword && confirmPassword" class="error-message">
         <p>Passwords do not match!</p>
       </div>
       <button type="submit" [disabled]="!username || !email || !phone || password !== confirmPassword">Submit</button>
